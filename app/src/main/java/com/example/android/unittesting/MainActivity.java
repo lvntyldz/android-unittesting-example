@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button signUp;
     private EditText firstName, lastName, email, password;
+    private Validator validator = new Validator();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,32 +27,12 @@ public class MainActivity extends AppCompatActivity {
         password = findViewById(R.id.password);
         signUp = findViewById(R.id.signup);
 
-
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                if (firstName.length() < 3) {
-                    firstName.setError("Please Enter At Least 3 Character As First Name");
-                    return;
-                }
-
-                if (lastName.length() < 3) {
-                    lastName.setError("Please Enter At Least 3 Character As Last Name");
-                    return;
-                }
-
-                if (email.length() < 3) {
-                    email.setError("Please Enter At Least 3 Character As E-Mail");
-                    return;
-                }
-
-                if (password.length() < 3) {
-                    password.setError("Please Enter At Least 3 Character As Password");
-                    return;
-                }
-
-                Toast.makeText(MainActivity.this,"SignedUp successfully...",Toast.LENGTH_SHORT).show();
+                SignUpHelper helper = new SignUpHelper(MainActivity.this, validator, firstName, lastName, email, password);
+                helper.onSignUpClicked();
 
             }
         });
