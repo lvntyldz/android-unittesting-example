@@ -3,5 +3,17 @@ package com.example.android.unittesting;
 interface SignupView {
     String getfirstname();
 
+    String getLastname();
+
+    String getEmail();
+
+    String getPassword();
+
     void showFirstnameErrorMsg(int msgId);
+
+    void showLastnameErrorMsg(int msgId);
+
+    void showEmailErrorMsg(int msgId);
+
+    void showPasswordErrorMsg(int msgId);
 }

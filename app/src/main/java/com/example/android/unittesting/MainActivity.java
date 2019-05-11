@@ -43,7 +43,37 @@ public class MainActivity extends AppCompatActivity implements SignupView {
     }
 
     @Override
+    public String getLastname() {
+        return lastName.getText().toString();
+    }
+
+    @Override
+    public String getEmail() {
+        return email.getText().toString();
+    }
+
+    @Override
+    public String getPassword() {
+        return password.getText().toString();
+    }
+
+    @Override
     public void showFirstnameErrorMsg(int msgId) {
         firstName.setError(getString(msgId));
+    }
+
+    @Override
+    public void showLastnameErrorMsg(int msgId) {
+        lastName.setError(getString(msgId));
+    }
+
+    @Override
+    public void showEmailErrorMsg(int msgId) {
+        email.setError(getString(msgId));
+    }
+
+    @Override
+    public void showPasswordErrorMsg(int msgId) {
+        password.setError(getString(msgId));
     }
 }
