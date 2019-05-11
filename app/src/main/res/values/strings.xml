@@ -4,4 +4,6 @@
     <string name="invalid_lastname_msg">Last Name Must Be At Least 1 Character</string>
     <string name="invalid_email_msg">Email Must Be At Least 1 Character</string>
     <string name="invalid_password_msg">Password Must Be At Least 1 Character</string>
+    <string name="signup_completed_success_msg">Signup Success</string>
+    <string name="signup_failed_msg">Signup Failed</string>
 </resources>

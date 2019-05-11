@@ -1,5 +1,7 @@
 package com.example.android.unittesting;
 
+import android.widget.Toast;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,7 +22,7 @@ public class RegistirationServiceTest {
     private SignupView view;
 
     @Mock
-    private SignupService service;
+    Toast toast;
 
     private String firstNameTmp = "levent";
     private String lastNameTmp = "YILDIZ";
@@ -114,4 +116,30 @@ public class RegistirationServiceTest {
 
         verify(view).showPasswordErrorMsg(R.string.invalid_password_msg);
     }
+
+    @Test
+    public void shouldShowSuccesSingupMessageWhenFirstnameAndLastnameMatches() {
+
+        String firstnameAndLastName = "SomeFirstNameAndSameLastName";
+
+        when(view.getFirstname()).thenReturn(firstnameAndLastName);
+        when(view.getLastname()).thenReturn(firstnameAndLastName);
+
+
+        registiration.onSignupClicked();
+
+        verify(view).showSignupResultMsg(R.string.signup_completed_success_msg);
+    }
+
+    @Test
+    public void shouldShowFailedSingupMessageWhenFirstnameAndLastnameNotMatches() {
+
+        when(view.getFirstname()).thenReturn("someFirstName");
+        when(view.getLastname()).thenReturn("someLastName");
+
+        registiration.onSignupClicked();
+
+        verify(view).showSignupResultMsg(R.string.signup_failed_msg);
+    }
+
 }

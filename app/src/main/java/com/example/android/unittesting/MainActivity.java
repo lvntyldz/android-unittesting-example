@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements SignupView {
 
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements SignupView {
         password = findViewById(R.id.password);
         signUp = findViewById(R.id.signup);
 
-        registiration = new RegistirationService(this, new SignupService());
+        registiration = new RegistirationService(this);
 
         signUp.setOnClickListener(onSignupBtnClickListener());
     }
@@ -75,5 +76,11 @@ public class MainActivity extends AppCompatActivity implements SignupView {
     @Override
     public void showPasswordErrorMsg(int msgId) {
         password.setError(getString(msgId));
+    }
+
+    @Override
+    public void showSignupResultMsg(int msgId) {
+        Toast.makeText(MainActivity.this, getString(msgId), Toast.LENGTH_SHORT).show();
+
     }
 }

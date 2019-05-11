@@ -16,4 +16,6 @@ interface SignupView {
     void showEmailErrorMsg(int msgId);
 
     void showPasswordErrorMsg(int msgId);
+
+    void showSignupResultMsg(int msgId);
 }

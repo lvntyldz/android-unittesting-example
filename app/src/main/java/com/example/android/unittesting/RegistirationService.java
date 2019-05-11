@@ -3,11 +3,9 @@ package com.example.android.unittesting;
 class RegistirationService {
 
     private SignupView view;
-    private SignupService service;
 
-    public RegistirationService(SignupView view, SignupService service) {
+    public RegistirationService(SignupView view) {
         this.view = view;
-        this.service = service;
     }
 
     public void onSignupClicked() {
@@ -36,5 +34,11 @@ class RegistirationService {
             view.showPasswordErrorMsg(R.string.invalid_password_msg);
             return;
         }
+
+        if (firstname.equals(lastname)) {
+            view.showSignupResultMsg(R.string.signup_completed_success_msg);
+            return;
+        }
+        view.showSignupResultMsg(R.string.signup_failed_msg);
     }
 }
