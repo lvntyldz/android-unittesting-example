@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">android-unittesting-example</string>
+    <string name="app_name">Android Unit Testing</string>
+    <string name="invalid_firstname_msg">FirstName Must Be At Least 1 Character</string>
 </resources>
