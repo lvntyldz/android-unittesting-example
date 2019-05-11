@@ -30,4 +30,14 @@ public class RegistirationServiceTest {
 
         verify(view).showFirstnameErrorMsg(R.string.invalid_firstname_msg);
     }
+
+    @Test(expected = NullPointerException.class)
+    public void shouldShowInvalidUsernameMsgWhenUsernameIsNull() {
+
+        when(view.getfirstname()).thenReturn(null);
+
+        registiration.onSignupClicked();
+
+        verify(view).showFirstnameErrorMsg(R.string.invalid_firstname_msg);
+    }
 }
