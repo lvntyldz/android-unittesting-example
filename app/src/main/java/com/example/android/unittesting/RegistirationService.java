@@ -12,7 +12,7 @@ class RegistirationService {
 
     public void onSignupClicked() {
 
-        String firstname = view.getfirstname();
+        String firstname = view.getFirstname();
         String lastname = view.getLastname();
         String email = view.getEmail();
         String password = view.getPassword();

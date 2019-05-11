@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements SignupView {
     }
 
     @Override
-    public String getfirstname() {
+    public String getFirstname() {
         return firstName.getText().toString();
     }
 

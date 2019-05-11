@@ -1,7 +1,7 @@
 package com.example.android.unittesting;
 
 interface SignupView {
-    String getfirstname();
+    String getFirstname();
 
     String getLastname();
 
